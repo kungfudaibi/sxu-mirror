@@ -1,0 +1,8 @@
+[
+  { "mirrorid": "ubuntu-releases", "title": "Ubuntu 安装镜像" },
+  { "mirrorid": "debian-cd", "title": "Debian 安装镜像" },
+  { "mirrorid": "archlinux", "title": "Arch Linux" },
+  { "mirrorid": "alpine", "title": "Alpine Linux" },
+  { "mirrorid": "docker-ce", "title": "Docker CE" },
+  { "mirrorid": "nodejs-release", "title": "Node.js" }
+]

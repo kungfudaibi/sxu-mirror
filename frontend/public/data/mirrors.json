@@ -1,0 +1,40 @@
+{
+  "mirrors": [
+    {
+      "name": "ubuntu-releases",
+      "desc": "Ubuntu 的安装镜像",
+      "url": "/ubuntu-releases/",
+      "category": "linux-distro"
+    },
+    {
+      "name": "archlinux",
+      "desc": "Arch Linux 的安装镜像和官方软件包仓库",
+      "url": "/archlinux/",
+      "category": "linux-distro"
+    },
+    {
+      "name": "alpine",
+      "desc": "Alpine Linux 的安装镜像和官方软件包仓库",
+      "url": "/alpine/",
+      "category": "linux-distro"
+    },
+    {
+      "name": "docker-ce",
+      "desc": "Docker Community Edition 的安装包",
+      "url": "/docker-ce/",
+      "category": "dev-tools"
+    },
+    {
+      "name": "nodejs-release",
+      "desc": "预编译的 Node.js 二进制程序",
+      "url": "/nodejs-release/",
+      "category": "dev-tools"
+    },
+    {
+      "name": "debian-cd",
+      "desc": "Debian Linux 的安装镜像",
+      "url": "/debian-cd/",
+      "category": "linux-distro"
+    }
+  ]
+}

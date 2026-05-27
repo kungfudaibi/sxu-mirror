@@ -1,0 +1,14 @@
+{
+  "updated_at": "auto",
+  "version": "1.0",
+  "mirrors": [
+    {
+      "name": "sxusync-repo",
+      "status": "success",
+      "size": "1.9MB",
+      "duration": "45s",
+      "timestamp": "2026-05-25T07:12:37Z",
+      "last_update": "2026-05-25T07:12:37Z"
+    }
+  ]
+}

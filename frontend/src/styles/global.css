@@ -1,0 +1,221 @@
+/* SXU Mirror Global Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Mirror grid — equal width & height cards */
+.mirror-grid .ant-col {
+  display: flex;
+}
+
+.mirror-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mirror-card .ant-card-body {
+  flex: 1;
+}
+
+.mirror-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Status badge colors */
+.status-success {
+  background: #f6ffed;
+  border-color: #b7eb8f;
+}
+.status-syncing {
+  background: #e6f7ff;
+  border-color: #91d5ff;
+}
+.status-failed {
+  background: #fff2f0;
+  border-color: #ffccc7;
+}
+.status-paused {
+  background: #fffbe6;
+  border-color: #ffe58f;
+}
+
+/* Help page markdown styles */
+.help-card {
+  border-radius: 8px;
+}
+
+.help-content {
+  line-height: 1.8;
+  color: #1a1a1a;
+  font-size: 15px;
+}
+
+.help-content h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e8e8e8;
+  color: #0b5e8a;
+}
+
+.help-content h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #262626;
+}
+
+.help-content h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  color: #434343;
+}
+
+.help-content p {
+  margin-bottom: 14px;
+}
+
+.help-content ul,
+.help-content ol {
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+.help-content li {
+  margin-bottom: 4px;
+}
+
+.help-content strong {
+  font-weight: 600;
+  color: #0b5e8a;
+}
+
+.help-content a {
+  color: #1677ff;
+  text-decoration: none;
+}
+
+.help-content a:hover {
+  text-decoration: underline;
+  color: #0b5e8a;
+}
+
+.help-content pre {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 16px 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin: 16px 0;
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+}
+
+.help-content code {
+  background: #f0f0f0;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 0.88em;
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  color: #d63384;
+}
+
+.help-content pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+.help-content blockquote {
+  border-left: 4px solid #1677ff;
+  padding: 8px 16px;
+  margin: 16px 0;
+  background: #f6f8fa;
+  border-radius: 0 6px 6px 0;
+  color: #555;
+}
+
+.help-content blockquote p {
+  margin-bottom: 0;
+}
+
+.help-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+.help-content th,
+.help-content td {
+  border: 1px solid #e8e8e8;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.help-content th {
+  background: #fafafa;
+  font-weight: 600;
+  color: #262626;
+}
+
+.help-content tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.help-content tr:hover {
+  background: #f0f5ff;
+}
+
+.help-content hr {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 28px 0;
+}
+
+.help-content img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .mobile-help-select {
+    display: block !important;
+  }
+  
+  .help-content {
+    font-size: 14px;
+  }
+  
+  .help-content pre {
+    padding: 12px 14px;
+    font-size: 12.5px;
+  }
+}

@@ -1,0 +1,109 @@
+# sxusync configuration
+global:
+  mirror_dir: /path/to/mirrors
+  log_dir: ./logs
+  concurrent: 3
+  status_file: ./frontend/dist/data/sync-status.json
+
+mirrors:
+  - name: ubuntu-releases
+    provider: rsync
+    upstream: rsync://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/
+    interval: 360
+    enabled: true
+
+
+
+
+
+  - name: debian-cd
+    provider: rsync
+    upstream: rsync://mirrors.tuna.tsinghua.edu.cn/debian-cd/
+    keep_versions: 2
+    interval: 720
+    enabled: true
+    include:
+      - "current/"
+      - "current/amd64/"
+      - "current/amd64/iso-dvd/"
+      - "current/amd64/iso-dvd/debian-[0-9]*-amd64-DVD-1.iso"
+      - "current/amd64/iso-cd/"
+      - "current/amd64/iso-cd/debian-[0-9]*-amd64-netinst.iso"
+      - "ls-lR.gz"
+    exclude:
+      - "*"
+    note: "仅 amd64 DVD-1 + netinst CD，~5GB, keep_versions=2 | [0-9] 排除 edu/mac 变体"
+
+  - name: archlinux
+    provider: rsync
+    upstream: rsync://mirrors.tuna.tsinghua.edu.cn/archlinux/
+    interval: 180
+    enabled: true
+
+  - name: alpine
+    provider: rsync
+    upstream: rsync://mirrors.tuna.tsinghua.edu.cn/alpine/
+    interval: 360
+    enabled: true
+    include:
+      - "*/"
+      - "v3.24"
+      - "v3.24/main/x86_64/**"
+      - "v3.24/community/x86_64/**"
+      - "v3.24/releases/x86_64/**"
+      - "edge"
+      - "edge/main/x86_64/**"
+      - "edge/community/x86_64/**"
+      - "latest-stable"
+      - "MIRRORS.txt"
+      - "last-updated"
+    exclude:
+      - "*"
+
+  - name: docker-ce
+    provider: rsync
+    upstream: rsync://mirrors.tuna.tsinghua.edu.cn/docker-ce/
+    interval: 720
+    enabled: true
+    include:
+      # 必须 include linux/ 让 rsync 进入此目录，否则不会遍历
+      - "linux/"
+      # ubuntu - only dists/*/pool/stable/amd64
+      - "linux/ubuntu/"
+      - "linux/ubuntu/dists/"
+      - "linux/ubuntu/dists/*/"
+      - "linux/ubuntu/dists/*/pool/"
+      - "linux/ubuntu/dists/*/pool/stable/"
+      - "linux/ubuntu/dists/*/pool/stable/amd64/"
+      - "linux/ubuntu/dists/*/pool/stable/amd64/**"
+      # debian - same structure
+      - "linux/debian/"
+      - "linux/debian/dists/"
+      - "linux/debian/dists/*/"
+      - "linux/debian/dists/*/pool/"
+      - "linux/debian/dists/*/pool/stable/"
+      - "linux/debian/dists/*/pool/stable/amd64/"
+      - "linux/debian/dists/*/pool/stable/amd64/**"
+      # centos - only */x86_64/stable
+      - "linux/centos/"
+      - "linux/centos/*/"
+      - "linux/centos/*/x86_64/"
+      - "linux/centos/*/x86_64/stable/"
+      - "linux/centos/*/x86_64/stable/**"
+      # static - only stable/x86_64
+      - "linux/static/"
+      - "linux/static/stable/"
+      - "linux/static/stable/x86_64/"
+      - "linux/static/stable/x86_64/**"
+    exclude:
+      - "*"
+    note: "仅同步 ubuntu+debian+centos+static 的 amd64 stable"
+    # 已有数据不会被 `--delete` 删除（未加 --delete-excluded），但空目录手动清理一次即可
+
+  - name: nodejs-release
+    provider: rsync
+    upstream: rsync://mirrors.tuna.tsinghua.edu.cn/nodejs-release/
+    interval: 720
+    enabled: true
+
+

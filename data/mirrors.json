@@ -1,0 +1,13 @@
+{
+  "mirrors": [
+    { "name": "ubuntu", "desc": "Ubuntu 的官方软件包仓库", "url": "/ubuntu/", "category": "linux-distro" },
+    { "name": "ubuntu-releases", "desc": "Ubuntu 的安装镜像", "url": "/ubuntu-releases/", "category": "linux-distro" },
+    { "name": "debian", "desc": "Debian Linux 的官方软件包仓库", "url": "/debian/", "category": "linux-distro" },
+    { "name": "debian-cd", "desc": "Debian Linux 的安装镜像", "url": "/debian-cd/", "category": "linux-distro" },
+    { "name": "archlinux", "desc": "Arch Linux 的安装镜像和官方软件包仓库", "url": "/archlinux/", "category": "linux-distro" },
+    { "name": "alpine", "desc": "Alpine Linux 的安装镜像和官方软件包仓库", "url": "/alpine/", "category": "linux-distro" },
+    { "name": "docker-ce", "desc": "Docker Community Edition 的安装包", "url": "/docker-ce/", "category": "dev-tools" },
+    { "name": "nodejs-release", "desc": "预编译的 Node.js 二进制程序", "url": "/nodejs-release/", "category": "dev-tools" },
+    { "name": "pypi", "desc": "Python 软件包索引源", "url": "/pypi/", "category": "dev-tools" }
+  ]
+}

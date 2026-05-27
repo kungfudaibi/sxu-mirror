@@ -1,0 +1,123 @@
+<style>
+:root {
+  --bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --text: #212529;
+  --text-secondary: #6c757d;
+  --border: #dee2e6;
+  --accent: #2b5797;
+  --accent-light: #e8f0fe;
+  --hover: #f1f3f5;
+  --header-bg: linear-gradient(135deg, #1a365d 0%, #2b5797 50%, #1a365d 100%);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Helvetica Neue", Arial, "Noto Sans SC", sans-serif !important;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.site-header {
+  background: var(--header-bg);
+  color: white;
+  padding: 0 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  gap: 12px;
+}
+.site-logo { width: 32px; height: 32px; flex-shrink: 0; }
+.site-title { font-size: 18px; font-weight: 600; letter-spacing: 0.5px; }
+.site-title a { color: white; text-decoration: none; }
+.site-title a:hover { opacity: 0.9; }
+.site-subtitle { font-size: 13px; opacity: 0.8; margin-left: auto; }
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  flex: 1;
+  width: 100%;
+}
+#list {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+#list thead th {
+  background: var(--accent-light);
+  padding: 10px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text);
+  border-bottom: 2px solid var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+#list thead th a { color: var(--text); text-decoration: none; }
+#list thead th a:hover { color: var(--accent); }
+#list tbody tr { transition: background 0.15s; }
+#list tbody tr:hover { background: var(--hover); }
+#list tbody td {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  white-space: nowrap;
+}
+#list tbody tr:last-child td { border-bottom: none; }
+#list .link a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+#list .link a:hover { text-decoration: underline; }
+.link a[href$="/"]::before { content: "📁\a0"; }
+.link a[href$=".apk"]::before, .link a[href$=".deb"]::before,
+.link a[href$=".rpm"]::before, .link a[href$=".iso"]::before { content: "📦\a0"; }
+.size { color: var(--text-secondary); font-family: "SF Mono", monospace; font-size: 13px; }
+.date { color: var(--text-secondary); font-size: 13px; }
+h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.site-footer {
+  background: var(--header-bg);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 16px 24px;
+  font-size: 13px;
+  margin-top: auto;
+}
+.site-footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+@media (max-width: 768px) {
+  .header-inner { height: 48px; }
+  .site-title { font-size: 16px; }
+  .site-subtitle { display: none; }
+  .main-container { padding: 12px; }
+}
+</style>
+<header class="site-header">
+  <div class="header-inner">
+    <img class="site-logo" src="/logo-32.png" alt="SXUOSA" onerror="this.style.display='none'">
+    <span class="site-title"><a href="/">山西大学开源镜像站</a></span>
+    <span class="site-subtitle">SXU Open Source Mirror</span>
+  </div>
+</header>
+<div class="main-container">

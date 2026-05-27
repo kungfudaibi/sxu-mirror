@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+frontend/bun.lock
+
+# Build output
+frontend/dist/
+*.tsbuildinfo
+
+# Binaries
+sxusync/sxusync
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Production config (environment-specific)
+sxusync/sxusync.yml
+
+# Auto-generated sync state
+frontend/public/data/sync-progress.json
+frontend/public/data/sync-status.json
+frontend/dist/data/sync-*.json
+frontend/dist/data/mirrors.json
+frontend/dist/help/
+
+# Backups
+*.bak
+*.bak2
+*.prod
